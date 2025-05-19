@@ -1,0 +1,111 @@
+.container-carrinho {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 400px;
+    height: 100vh;
+    background: white;
+    box-shadow: -2px 0 15px rgba(0,0,0,0.1);
+    transition: right 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .container-carrinho.aberto {
+    right: 0;
+  }
+  
+  .cabecalho-carrinho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .botao-fechar {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+  }
+  
+  .lista-itens {
+    max-height: 60vh;
+    overflow-y: auto;
+    padding: 0 15px;
+    margin-bottom: 20px;
+  }
+  
+  .item-carrinho {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .item-carrinho img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+  }
+  
+  .controle-quantidade {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+  }
+  
+  .controle-quantidade button {
+    padding: 5px 12px;
+    border: 1px solid #ddd;
+    background: #f8f8f8;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .total-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .texto-total {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  
+  .valor-total {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #2a2a2a;
+  }
+  
+  .botao-finalizar {
+    width: 100%;
+    padding: 15px;
+    background: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .botao-remover {
+    background: #ff4444;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s;
+  }
+  
+  .botao-remover:hover {
+    background: #cc0000;
+  }
