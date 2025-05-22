@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router';
-import fundo from '../../assets/images/fundo.jpg';
+import fundo from '../../assets/imagens/fundo.jpg';
 import './Login.css';
 
 export default function Login({ setIsAuthenticated }) {

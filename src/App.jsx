@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
+import { Navigate, Route, Routes, useNavigate } from "react-router";
 import Routers from "./components/routers/Routers";
 import Login from "./pages/login/Login";
 import Cadastro from "./pages/cadastro/Cadastro";
-import Produto from "../produto/Produto";
+import Produto from "./components/produto/Produto";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);

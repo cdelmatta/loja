@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import fundo from '../../assets/images/fundo.jpg';
+import { useState } from 'react';
+import { useNavigate } from 'react-router';
+import fundo from '../../assets/imagens/fundo.jpg';
 import './Cadastro.css';
 
 export default function Cadastro() {
