@@ -76,98 +76,100 @@ export default function Cadastro() {
         className="imagem-fundo"
         role="presentation"
       />
-      <div className="formulario-cadastro">
-        <h1>Cadastro</h1>
-        {erro && <div className="mensagem-erro">{erro}</div>}
-        <form onSubmit={handleSubmit}>
-          {/* Campos mantidos iguais */}
-          <input
-            type="email"
-            name="email"
-            placeholder="E-mail"
-            value={form.email}
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="password"
-            name="senha"
-            placeholder="Senha"
-            value={form.senha}
-            onChange={handleChange}
-            required
-          />
-          <input
-            name="nome"
-            placeholder="Nome Completo"
-            value={form.nome}
-            onChange={handleChange}
-            required
-          />
-          <input
-            name="cpf"
-            placeholder="CPF"
-            value={form.cpf}
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="date"
-            name="nascimento"
-            value={form.nascimento}
-            onChange={handleChange}
-            required
-          />
-          <input
-            name="telefone"
-            placeholder="Telefone"
-            value={form.telefone}
-            onChange={handleChange}
-            required
-          />
-          <select
-            name="sexo"
-            value={form.sexo}
-            onChange={handleChange}
-            required
-          >
-            <option value="">Selecione o sexo</option>
-            <option value="M">Masculino</option>
-            <option value="F">Feminino</option>
-          </select>
-          <input
-            name="cep"
-            placeholder="CEP"
-            value={form.cep}
-            onChange={handleChange}
-            required
-          />
-          <input
-            name="rua"
-            placeholder="Rua"
-            value={form.rua}
-            onChange={handleChange}
-            required
-          />
-          <input
-            name="bairro"
-            placeholder="Bairro"
-            value={form.bairro}
-            onChange={handleChange}
-            required
-          />
-          <input
-            name="numero"
-            placeholder="Número"
-            value={form.numero}
-            onChange={handleChange}
-            required
-          />
-          <button type="submit" className="botao-cadastrar">
-            Cadastrar
-          </button>
-        </form>
+      <div className="conteudo-cadastro">
+        <div className="formulario-cadastro">
+          <h1>Cadastro</h1>
+          {erro && <div className="mensagem-erro">{erro}</div>}
+          <form onSubmit={handleSubmit}>
+            <input
+              type="email"
+              name="email"
+              placeholder="E-mail"
+              value={form.email}
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="password"
+              name="senha"
+              placeholder="Senha"
+              value={form.senha}
+              onChange={handleChange}
+              required
+            />
+            <input
+              name="nome"
+              placeholder="Nome Completo"
+              value={form.nome}
+              onChange={handleChange}
+              required
+            />
+            <input
+              name="cpf"
+              placeholder="CPF"
+              value={form.cpf}
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="date"
+              name="nascimento"
+              value={form.nascimento}
+              onChange={handleChange}
+              required
+            />
+            <input
+              name="telefone"
+              placeholder="Telefone"
+              value={form.telefone}
+              onChange={handleChange}
+              required
+            />
+            <select
+              name="sexo"
+              value={form.sexo}
+              onChange={handleChange}
+              required
+            >
+              <option value="">Selecione o sexo</option>
+              <option value="M">Masculino</option>
+              <option value="F">Feminino</option>
+            </select>
+            <input
+              name="cep"
+              placeholder="CEP"
+              value={form.cep}
+              onChange={handleChange}
+              required
+            />
+            <input
+              name="rua"
+              placeholder="Rua"
+              value={form.rua}
+              onChange={handleChange}
+              required
+            />
+            <input
+              name="bairro"
+              placeholder="Bairro"
+              value={form.bairro}
+              onChange={handleChange}
+              required
+            />
+            <input
+              name="numero"
+              placeholder="Número"
+              value={form.numero}
+              onChange={handleChange}
+              required
+            />
+            <button type="submit" className="botao-cadastrar">
+              Cadastrar
+            </button>
+          </form>
+        </div>
       </div>
     </div>
+
   );
 }
