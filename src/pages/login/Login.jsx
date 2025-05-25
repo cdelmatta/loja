@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
+import { useAuth } from '../../context/AuthContext';
 import fundo from '../../assets/imagens/fundo.jpg';
 import './Login.css';
 
-export default function Login({ setIsAuthenticated }) {
+export default function Login() {
+  const { setIsAuthenticated } = useAuth();
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
   const [erro, setErro] = useState('');

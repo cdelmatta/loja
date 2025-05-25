@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import fundo from '../../assets/imagens/fundo.jpg';
+import { useAuth } from '../../context/AuthContext';
 import './Cadastro.css';
 
 export default function Cadastro() {
+  const { setIsAuthenticated } = useAuth();
   const [form, setForm] = useState({
     nome: '',
     cpf: '',
@@ -61,7 +63,9 @@ export default function Cadastro() {
     };
 
     localStorage.setItem('usuarios', JSON.stringify([...usuarios, novoUsuario]));
-    navigate('/');
+    sessionStorage.setItem('usuarioLogado', JSON.stringify(novoUsuario));
+    setIsAuthenticated(true);
+    navigate('/produtos');
   };
 
   return (
@@ -76,6 +80,7 @@ export default function Cadastro() {
         <h1>Cadastro</h1>
         {erro && <div className="mensagem-erro">{erro}</div>}
         <form onSubmit={handleSubmit}>
+          {/* Campos mantidos iguais */}
           <input
             type="email"
             name="email"
