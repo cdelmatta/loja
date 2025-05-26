@@ -1,0 +1,45 @@
+.lista-produtos-delete {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.produto-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.botao-delete {
+  background-color: #e74c3c;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.botao-delete:hover {
+  background-color: #c0392b;
+}
+
+/* Produtos View */
+.produtos-view-container {
+  text-align: center;
+  padding: 50px;
+}
+
+.mensagem-bemvindo {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.descricao-painel {
+  color: #7f8c8d;
+  font-size: 1.1rem;
+}
