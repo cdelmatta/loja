@@ -1,12 +1,36 @@
+import { BrowserRouter, Routes, Route, Navigate } from "react-router";
 import { AuthProvider } from "./context/AuthContext";
-import Routers from "./components/routers/Routers";
+import RequireAuth from "./components/auth/RequireAuth";
 
-function App() {
+import DashBoard from "./pages/DashBoard/DashBoard";
+import Login from "./pages/Login/Login";
+import Cadastro from "./pages/Cadastro/Cadastro";
+import Produto from "./components/Produto/Produto";
+
+export default function App() {
   return (
-    <AuthProvider>
-      <Routers />
-    </AuthProvider>
+    <BrowserRouter>
+      <AuthProvider>
+        <Routes>
+          <Route path="/" element={<Navigate to="/dashboard/produtos" replace />} />
+          
+          <Route path="/login" element={<Login />} />
+          <Route path="/cadastro" element={<Cadastro />} />
+          
+          <Route path="/dashboard" element={<DashBoard />}>
+            <Route
+              path="produtos"
+              element={
+                <RequireAuth>
+                  <Produto />
+                </RequireAuth>
+              }
+            />
+          </Route>
+
+          <Route path="*" element={<Navigate to="/dashboard/produtos" replace />} />
+        </Routes>
+      </AuthProvider>
+    </BrowserRouter>
   );
 }
-
-export default App;

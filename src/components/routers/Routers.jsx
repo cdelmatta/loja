@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router";
+/* import { Routes, Route } from "react-router";
 import Login from "../../pages/login/Login";
 import Cadastro from "../../pages/cadastro/Cadastro";
 import Produto from "../../components/produto/Produto";
@@ -19,4 +19,4 @@ export default function Routers() {
       />
     </Routes>
   );
-}
+} */

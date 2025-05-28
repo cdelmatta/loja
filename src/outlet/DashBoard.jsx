@@ -13,7 +13,7 @@ export default function DashBoard() {
       alert("Você precisa estar logado para acessar os produtos.");
       navigate("/login");
     }
-  }
+  };
 
   return (
     <div className="container-dashboard">
@@ -27,12 +27,17 @@ export default function DashBoard() {
           <button onClick={() => navigate("deletarProdutos")}>Deletar Produtos</button>
           <button onClick={() => navigate("criarProdutos")}>Criar Produtos</button>
           <button onClick={() => navigate("produtosView")}>Tela Inicial</button>
-          {autenticado ? (<button onClick={logout}>Sair</button>) : (
+          {autenticado ? (
+            <button onClick={logout}>Sair</button>
+          ) : (
             <button onClick={() => navigate("/login")}>Login</button>
           )}
         </div>
       </div>
-      <Outlet />
+
+      <div className="outlet-container">
+        <Outlet />
+      </div>
     </div>
   );
 }
