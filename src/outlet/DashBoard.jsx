@@ -1,5 +1,5 @@
 import { Outlet, useNavigate } from "react-router";
-import { useAuth } from "../../Componentes/AuthProvider";
+import { useAuth } from "../context/AuthContext";
 import "./dashBoard.css";
 
 export default function DashBoard() {

@@ -2,8 +2,8 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router";
 import { AuthProvider } from "./context/AuthContext";
 import RequireAuth from "./components/auth/RequireAuth";
 
-import DashBoard from "./pages/DashBoard/DashBoard";
-import Login from "./pages/Login/Login";
+import DashBoard from "./outlet/DashBoard";
+import Login from "./pages/login/Login";
 import Cadastro from "./pages/Cadastro/Cadastro";
 import Produto from "./components/Produto/Produto";
 
