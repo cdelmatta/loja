@@ -4,7 +4,7 @@ import {
   CriarProduto,
   DeletarProduto,
   AtualizarProduto,
-} from "../data/fetchProdutos";
+} from "./api";
 
 export const DataContext = createContext();
 

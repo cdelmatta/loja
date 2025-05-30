@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
-import { CriarProduto, LerProdutos } from '../../data/fetchProdutos';
-import { DataContext } from '../../context/data';
+import { CriarProduto, LerProdutos } from '../../apis/api';
+import { DataContext } from '../../apis/DataContext';
 import './CriarProdutos.css';
 
 export default function CriarProdutos() {

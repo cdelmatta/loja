@@ -4,7 +4,7 @@ import axios from "axios";
 export async function CriarProduto(nome, valor, imagem) {
   try {
     const response = await axios.post(
-      "http://localhost:3000/produtos/criar",
+      "http://localhost:3001/produtos/criar",
       { nome, valor, imagem },
       {
         headers: { "Content-Type": "application/json" },
@@ -19,7 +19,7 @@ export async function CriarProduto(nome, valor, imagem) {
 
 export async function LerProdutos(setProdutos) {
   try {
-    const response = await axios.get("http://localhost:3000/produtos/ler", {
+    const response = await axios.get("http://localhost:3001/produtos/ler", {
       headers: { "Content-Type": "application/json" },
     });
     console.log("Sucesso em ler produtos");
@@ -33,7 +33,7 @@ export async function LerProdutos(setProdutos) {
 export async function DeletarProduto(id) {
   try {
     const response = await axios.delete(
-      `http://localhost:3000/produtos/deletar/`,
+      `http://localhost:3001/produtos/deletar/`,
       { id },
       {
         headers: { "Content-Type": "application/json" },
@@ -49,7 +49,7 @@ export async function DeletarProduto(id) {
 export async function AtualizarProduto(id, nome, valor, imagem) {
   try {
     const response = await axios.post(
-      `http://localhost:3000/produtos/atualizar/`,
+      `http://localhost:3001/produtos/atualizar/`,
       { id, nome, valor, imagem },
       {
         headers: { "Content-Type": "application/json" },

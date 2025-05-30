@@ -1,0 +1,25 @@
+.tela {
+  padding: 2rem;
+  text-align: center;
+}
+
+.produtos-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.produto-card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 6px;
+  width: 200px;
+  background-color: #fff;
+}
+
+.produto-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}

@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react';
-import { DataContext } from '../../context/data';
-import { LerProdutos } from '../../data/fetchProdutos';
+import { DataContext } from '../../apis/DataContext';
+import { LerProdutos } from '../../apis/api';
 import './VerProdutos.css';
 
 export default function VerProdutos() {

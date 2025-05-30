@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react';
-import { DataContext } from '../../context/data';
-import { DeletarProduto, LerProdutos } from '../../data/fetchProdutos';
+import { DataContext } from '../../apis/DataContext';
+import { DeletarProduto, LerProdutos } from '../../apis/api';
 import './DeletarProdutos.css';
 
 export default function DeletarProdutos() {
