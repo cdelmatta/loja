@@ -1,48 +1,66 @@
-import { createContext, useEffect, useState } from "react";
+// src/apis/DataContext.jsx
+import React, { createContext, useState, useEffect, useCallback } from 'react';
 import {
-  LerProdutos,
-  CriarProduto,
-  DeletarProduto,
-  AtualizarProduto,
-} from "./api";
+  CriarProduto as apiCriar,
+  LerProdutos   as apiLer,
+  AtualizarProduto as apiAtualizar,
+  DeletarProduto   as apiDeletar
+} from './api';
 
-export const DataContext = createContext();
+// Named export do Context
+export const DataContext = createContext({
+  produtos: [],
+  criar: () => Promise.resolve(),
+  atualizar: () => Promise.resolve(),
+  deletar: () => Promise.resolve(),
+  load: () => Promise.resolve(),
+});
 
-export default function DataProvider({ children }) {
+// Named export do Provider
+export function DataProvider({ children }) {
   const [produtos, setProdutos] = useState([]);
-  const [aux, setAux] = useState(0);
 
-  useEffect(() => {
-    LerProdutos(setProdutos);
+  // Função de load estável
+  const load = useCallback(async () => {
+    try {
+      await apiLer(setProdutos);
+    } catch (err) {
+      console.error('Erro no load do DataContext:', err);
+    }
   }, []);
 
-  // Métodos utilitários para serem usados por qualquer componente
-  const criar = async (nome, valor, imagem) => {
-    await CriarProduto(nome, valor, imagem);
-    await LerProdutos(setProdutos);
-  };
+  useEffect(() => {
+    load();
+  }, [load]);
 
-  const deletar = async (id) => {
-    await DeletarProduto(id);
-    await LerProdutos(setProdutos);
-  };
+  // Métodos CRUD encapsulados e estáveis
+  const criar = useCallback(
+    async (nome, valor, imagem) => {
+      await apiCriar(nome, valor, imagem);
+      await load();
+    },
+    [load]
+  );
 
-  const atualizar = async (id, nome, valor, imagem) => {
-    await AtualizarProduto(id, nome, valor, imagem);
-    await LerProdutos(setProdutos);
-  };
+  const atualizar = useCallback(
+    async (id, nome, valor, imagem) => {
+      await apiAtualizar(id, nome, valor, imagem);
+      await load();
+    },
+    [load]
+  );
+
+  const deletar = useCallback(
+    async (id) => {
+      await apiDeletar(id);
+      await load();
+    },
+    [load]
+  );
 
   return (
     <DataContext.Provider
-      value={{
-        produtos,
-        setProdutos,
-        setAux,
-        aux,
-        criar,
-        deletar,
-        atualizar,
-      }}
+      value={{ produtos, criar, atualizar, deletar, load }}
     >
       {children}
     </DataContext.Provider>

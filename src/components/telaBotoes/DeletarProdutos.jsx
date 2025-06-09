@@ -1,30 +1,27 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { DataContext } from '../../apis/DataContext';
-import { DeletarProduto, LerProdutos } from '../../apis/api';
 import './DeletarProdutos.css';
 
 export default function DeletarProdutos() {
-  const { produtos, setProdutos } = useContext(DataContext);
-
-  useEffect(() => {
-    LerProdutos(setProdutos);
-  }, [setProdutos]);
-
-  const deletar = async (id) => {
-    await DeletarProduto(id);
-    await LerProdutos(setProdutos);
-  };
+  const { produtos, deletar } = useContext(DataContext);
 
   return (
     <div className="tela">
       <h1>Deletar Produtos</h1>
-      <ul className="lista-produtos">
-        {produtos.map((produto) => (
-          <li key={produto.id}>
-            {produto.nome} <button onClick={() => deletar(produto.id)}>Deletar</button>
-          </li>
-        ))}
-      </ul>
+      {produtos.length === 0 ? (
+        <p>Nenhum produto cadastrado.</p>
+      ) : (
+        <ul className="lista-produtos">
+          {produtos.map((p) => (
+            <li key={p.id}>
+              {p.nome}{' '}
+              <button onClick={() => deletar(p.id)}>
+                Deletar
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }
